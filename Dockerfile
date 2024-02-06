@@ -10,10 +10,8 @@ COPY requirements.txt ./app/
 RUN pip install --upgrade pip
 
 RUN pip install --no-cache-dir -r ./app/requirements.txt
+RUN pip install python-decouple
 
 COPY . /app/
 
 # RUN python manage.py collectstatic --noinput
-
-# CMD ["python", "manage.py", "migrate"]
-# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
