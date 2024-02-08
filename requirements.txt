@@ -1,7 +1,6 @@
 asgiref==3.7.2
 Django==5.0.2
 numpy==1.26.4
-opencv-python==4.9.0.80
 python-decouple==3.8
 setuptools==69.0.3
 sqlparse==0.4.4
