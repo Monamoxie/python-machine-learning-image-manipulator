@@ -17,7 +17,8 @@ services:
       - .env
     depends_on:
       - postgres
-    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command: tail -f /dev/null
+    # command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     networks:
       - app_network
 
