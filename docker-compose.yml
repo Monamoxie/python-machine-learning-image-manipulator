@@ -11,13 +11,16 @@ services:
     container_name: ${APP_NAME}_python_container
     volumes:
       - .:/app
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /tmp/.docker.xauth:/tmp/.docker.xauth
     ports:
       - "1200:8000"
     env_file:
       - .env
     depends_on:
       - postgres
-    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    # command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command: bash -c "chmod +x /app/bash.sh && /app/bash.sh"
     networks:
       - app_network
 
