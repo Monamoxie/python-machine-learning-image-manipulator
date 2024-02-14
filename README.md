@@ -8,8 +8,8 @@ An image manipulator built on
  - Django (for UI)
 
  # To use the GUI capabilities of OpenCV with this Docker container:
-  1. Install XQuartz (<a href="https://www.xquartz.org/" target="_blank">Download Link</a>)
-2. Click on `Preferences` from the Menu bar
+1. Install XQuartz (<a href="https://www.xquartz.org/" target="_blank">Download Link</a>)
+2. Click on `Preferences` from the Menu bar and toggle on `Allow connections from network clients`
 3. Vist the root of the cloned project and run `xauth list`
 4. Copy the output from the above step
 5. Run `echo "<OUTPUT_OF_STEP_3>" | sed -e 's/^..../ffff/' > .docker.xauth`
