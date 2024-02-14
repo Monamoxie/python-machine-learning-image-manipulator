@@ -12,7 +12,7 @@ services:
     volumes:
       - .:/app
       - /tmp/.X11-unix:/tmp/.X11-unix
-      - /tmp/.docker.xauth:/tmp/.docker.xauth
+      - ./docker.xauth:/tmp/.docker.xauth
     ports:
       - "1200:8000"
     env_file:
@@ -20,7 +20,12 @@ services:
     depends_on:
       - postgres
     # command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
-    command: bash -c "chmod +x /app/bash.sh && /app/bash.sh"
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    environment:
+      - DISPLAY=host.docker.internal:0
+      - XSOCK=/tmp/.X11-unix
+      - XAUTH=/tmp/.docker.xauth
+      - XAUTHORITY=/tmp/.docker.xauth
     networks:
       - app_network
 
