@@ -1,1 +1,1 @@
-from .image import ImageListView
+from .image_list import ImageListView

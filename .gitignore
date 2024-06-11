@@ -4,3 +4,4 @@ venv
 .vscode
 .hidden
 .docker.xauth
+.DS_Store
