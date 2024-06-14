@@ -1,1 +1,1 @@
-from .image_list import ImageListView
+from .image_view import ImageListView, ImageUploadView
