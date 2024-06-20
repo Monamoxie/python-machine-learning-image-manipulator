@@ -5,3 +5,5 @@ venv
 .hidden
 .docker.xauth
 .DS_Store
+mldmodels/
+__pycache__
