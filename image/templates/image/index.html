@@ -51,7 +51,17 @@
             Sub-hero message, not too long and not too short. Make it just right!
           </p>
 
-          <form class="bg-gray-900 opacity-75 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4" action="{% url 'check' %}" method="POST">
+
+          
+           {% if messages %}
+              <ul class="messages">
+                  {% for message in messages %}
+                      <li>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+          {% endif %}
+          <form class="bg-gray-900 opacity-75 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4" action="{% url 'check' %}" method="POST" 
+            enctype="multipart/form-data">
             {% csrf_token %}
             <div class="mb-4">
               <label class="block text-blue-300 py-2 font-bold mb-2" for="emailaddress">
