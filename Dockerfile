@@ -31,7 +31,7 @@ COPY . /app/
 COPY requirements.txt ./app/
 
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r ./app/requirements.txt
+RUN pip install -r ./app/requirements.txt
 
 
 # ENV QT_X11_NO_MITSHM=1
