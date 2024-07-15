@@ -9,8 +9,10 @@ from fastai.vision.all import (
     resnet34,
     error_rate,
 )
+from fastai.vision.all import *
 import os
 from fastcore.foundation import L
+from core.settings import BASE_DIR
 
 
 class Command(BaseCommand):
@@ -48,11 +50,11 @@ class Command(BaseCommand):
         # drive.mount('/content/drive')
         # model_path = '/content/model.pkl'
 
-        # comment this model_path if exporting to google drive.
-        model_path = os.path.join("image", "mldmodels", "cat_dog_model.pkl")
+        # comment this model_path if exporting to local drive.
+        model_path = os.path.join(BASE_DIR, "image", "mldmodels", "cat_dog_model.pkl")
         learn.export(model_path)
 
-        # Uncomment the lines below if your exported to your drive and wish to download it
+        # Uncomment the lines below if exported to your drive and wish to download it
 
         # from google.colab import files
         # files.download("/content/model.pkl")
