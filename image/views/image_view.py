@@ -38,10 +38,14 @@ class ImageUploadView(FormView):
                     dest.write(chunk)
 
             if os.path.exists(file_path := upload_dir + file.name):
-                prediction = service.predict(file_path)
+                prediction, probability = service.predict(file_path)
 
         else:
             return self.form_invalid(form)
+
+        messages.success(
+            request, f"Prediction: {prediction}, Probability: {probability[1].item()}"
+        )
         return render(request, "image/index.html")
 
     def form_invalid(self, form):

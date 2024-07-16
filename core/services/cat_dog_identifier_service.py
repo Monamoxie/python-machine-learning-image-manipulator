@@ -21,4 +21,4 @@ class CatDogIdentifierService:
 
         pred, _, probability = self.learn.predict(img)
 
-        return str(pred) == True
+        return str(pred) == "True", probability
